@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>An Truong Tuong Vi | Portfolio</title>
+    <link rel="stylesheet" href="./css/style.css"
 </head>
+<style>
+    .navigation div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 5px 10px;
+        height: 35px;
+    }
+
+    .navigation div.active {
+        border-bottom: 2px solid #333;
+    }
+
+    .logo {
+        background-color: #FF97AE;
+        --sz: 50px;
+        height: var(--sz);
+        width: var(--sz);
+        border-radius: 50%;
+        color: #fff;
+        font-weight: 600;
+    }
+</style>
 <body>
-    
+    <div class="dflex align-items-center">
+        <div class="logo btn">Vi</div>
+        <div class="navigation dflex align-items-center justify-content-center">
+            <div class="btn active">Home</div>
+            <div class="btn">Experience</div>
+            <div class="btn">Projects</div>
+            <div class="btn">Certification</div>
+            <div class="btn">About me</div>
+        </div>
+    </div>
 </body>
 </html>
