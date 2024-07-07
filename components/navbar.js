@@ -1,8 +1,8 @@
 document.getElementById("navbar").innerHTML = `
     <link rel="stylesheet" href="../css/navbar.css" />
 
-    <i class="toggle-open fa-solid fa-bars fa-2x" style="color: #1b1b1b; position: absolute; right: 40px; top: 20px" onclick="openNavBar()"></i>
-    <i class="toggle-close fa-solid fa-x fa-2x hidden" style="color: #ff97ae; position: absolute; right: 40px; top: 20px" onclick="closeNavBar()"></i>
+    <i class="toggle-open fa-solid fa-bars fa-2x" style="color: #1b1b1b; position: fixed; right: 40px; top: 20px" onclick="openNavBar()"></i>
+    <i class="toggle-close fa-solid fa-x fa-2x hidden" style="color: #ff97ae; position: fixed; right: 40px; top: 20px" onclick="closeNavBar()"></i>
     <div class="navigation dflex align-items-center justify-content-center text-gray sm-sz" style="gap: 30px">
         <a href="index.html" class="btn active">Home</a>
         <a href="education.html" class="btn">Education</a>

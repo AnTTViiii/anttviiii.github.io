@@ -1,5 +1,6 @@
 .navigation {
     padding: 10px 20px;
+    z-index: 98;
     background-color: white;
     width: fit-content;
     margin-left: auto;
@@ -30,6 +31,7 @@
 
 .toggle-close, .toggle-open {
     display: none;
+    z-index: 99;
 }
 
 @media screen and (max-width: 630px) {

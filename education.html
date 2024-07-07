@@ -13,9 +13,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg bg-gray-50 overflow-hidden">
-    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" >
-        <div id="navbar" style="position: relative;"> </div>
+<style>
+    @media screen and (max-width: 630px) {
+        .icon-btn {
+            --sz: 30px;
+        }
+
+        .btnTranscript {
+            height: 30px;
+            font-size: 14px;
+        }
+
+        .certificates {
+            flex-direction: column;
+
+            >div {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .college {
+        min-width: 300px;
+        width: 100%;
+        height: fit-content;
+        border-radius: 10px;
+        background-color: #a2a2a24a;
+        padding: 10px;
+
+        >div {
+            padding: 6px;
+            background: linear-gradient(90deg, rgba(226,224,251,1) 27%, rgb(255, 244, 242) 90%) center/cover no-repeat fixed;
+            border-radius: 0 0 5px 5px;
+
+            >div {
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .btnTranscript {
+        background-color: #1b1b1b;
+        border-radius: 5px;
+        color: white;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        height: 40px;
+        padding: 10px 15px;
+    }
+
+    .heading-title {
+        font-weight: 700;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        color: #1b1b1b;
+    }
+
+    .cpink {
+        color: #ff97ae;
+    }
+
+    .certificates > div {
+        border-radius: 10px;
+        background-color: #a2a2a24a;
+        padding: 10px;
+
+        >div:last-child {
+            padding: 6px;
+            /* background: rgba(255, 249, 231, 0.581); */
+            background: linear-gradient(90deg, rgba(226,224,251,1) 27%, rgb(255, 244, 242) 90%) center/cover no-repeat fixed;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+    }
+
+    @media screen and (max-width: 692px) {
+        .certificates {
+            flex-direction: column;
+
+            >div {
+                width: 100% !important;
+            }
+        }
+    }
+</style>
+<body class="bg bg-gray-50">
+    <div class="hidden-bg w-100 overflow-hidden" style="height: 100vh">
+        <div id="navbar"> </div>
+
+        <div class="dflex flex-column overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
+            <div class="college align-center" style="position: relative; max-width: 725px;">
+                <img src="https://cbsv1.uit.edu.vn/assets/images/cover.png" width="100%" height="auto" style="border: 1px solid #aaa; border-radius: 5px 5px 0 0; object-fit: cover;" />
+                <div>
+                    <div style="font-size: 18px;">University of Information Technology - VNUHCM</div>
+                    <div><b>Bachelor of Information Technology</b></div>
+                    <div>2020 - 2024 <span class="cpink">(Graduated)</span></div>
+                    <div>GPA: <b>8.22/10</b></div>
+                </div>
+                <a class="btn btnTranscript" href="https://drive.google.com/file/d/19XfL_8bv-RMhgqK6c-WdtH-pNwhH98GM/view" target="_blank">Transcript</a>
+            </div>
+
+            <h4 class="heading-title"><span class="cpink"> —— </span>Certificates<span class="cpink"> —— </span></h4>
+
+            <div class="certificates dflex align-items-center gap-10 align-center" style="width: 100%; max-width: 725px;">
+                <div class="dflex gap-10" style="width: calc(50% - 5px)">
+                    <img src="/asset/TOEIC_LR.png" width="150px" height="auto" style="border-radius: 5px; object-fit: cover;" />
+                    <div style="flex: 1 1 0;">
+                        TOEIC Listening and Reading<br/>
+                        Score: <sapn class="cpink">745/990</sapn><br/>
+                        Valid until: 2025/10/26
+                    </div>
+                </div>
+
+                <div class="dflex gap-10" style="width: calc(50% - 5px)">
+                    <img src="/asset/TOEIC_SW.png" width="150px" height="auto" style="border-radius: 5px; object-fit: cover;" />
+                    <div style="flex: 1 1 0;">
+                        TOEIC Speaking and Writing<br/>
+                        Score: <span class="cpink">250/400</span><br/>
+                        Valid until: 2026/02/20
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="components/navbar.js"></script>

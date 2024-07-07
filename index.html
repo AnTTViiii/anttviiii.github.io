@@ -101,7 +101,8 @@
                 justify-content: flex-start !important;
                 padding-top: 25px !important;
                 padding-bottom: 25px !important;
-                min-width: 320px !important;
+                min-width: 300px !important;
+                width: 100px;
             }
         }
 
@@ -117,17 +118,13 @@
             height: 30px;
             font-size: 14px;
         }
-        
-        .navigation {
-            display: none !important;
-        }
     }
 </style>
-<body class="bg bg-gray-50 overflow-hidden">
-    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" >
-        <div id="navbar" style="position: relative;"> </div>
+<body class="bg bg-gray-50">
+    <div class="hidden-bg h-100 w-100 overflow-hidden" >
+        <div id="navbar"> </div>
         
-        <div class="body-content dflex align-items-center overflow-auto sm-sz" style="width: calc(100% - 20px); max-width: 725px; margin-left: auto; margin-right: auto; height: 100%">
+        <div class="body-content dflex align-items-center sm-sz w-100 h-100 overflow-auto" style="max-width: 725px; margin-left: auto; margin-right: auto; padding: 20px;">
             <div style="width: 30%; max-width: 190px; height: 100%;" class="left-col dflex align-items-center justify-content-center">
                 <div style="width: fit-content; margin: 0; padding: 0; position: relative;">
                     <div id="rotate-text"></div>
@@ -180,7 +177,7 @@
 <script src="components/navbar.js"></script>
 
 <script>
-    const str = "------• Software Developer • ------";
+    const str = "------• Software Developer •------";
     const text = document.getElementById("rotate-text");
     window.onload = function(){
         for (let i = 0; i < str.length; i++) {
