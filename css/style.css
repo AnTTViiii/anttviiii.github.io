@@ -26,6 +26,10 @@ body, html {
     color: rgb(107 114 128);
 }
 
+.hidden {
+    display: none !important;
+}
+
 .overflow-auto {
     overflow: auto !important;
 }
@@ -573,6 +577,7 @@ code {
 a {
     color: unset;
     font-style: unset;
+    text-decoration: unset;
 }
 
 a > code {

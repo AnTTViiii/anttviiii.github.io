@@ -27,7 +27,7 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 30px -10px, rgba(0, 0, 0, 0.3) 0px 18px 30px -18px;
     }
 
-    .navigation div {
+    .navigation a {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -36,8 +36,8 @@
         height: 30px;
     }
 
-    .navigation div.active,
-    .navigation div:hover {
+    .navigation a.active,
+    .navigation a:hover {
         color: rgb(3,7,18);
     }
 
@@ -127,8 +127,30 @@
         font-size: 18px;
     }
 
-    .toggle {
+    .toggle-close, .toggle-open {
         display: none;
+    }
+
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .15s
+    }
+    
+    .duration-200 {
+        transition-duration: .2s
+    }
+    
+    .duration-300 {
+        transition-duration: .3s
+    }
+    
+    .ease-out {
+        transition-timing-function: cubic-bezier(0,0,.2,1)
+    }
+
+    .rotate-45 {
+        --tw-rotate: 45deg;
     }
 
     @media screen and (max-width: 630px) {
@@ -171,14 +193,51 @@
             display: none !important;
         }
 
-        .toggle {
+        @keyframes appear {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes disappear {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .toggle-open {
             display: flex;
             cursor: pointer;
-            transition: all .3s ease-out;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1) .3s ease-out;
+        }
 
-            &.open {
-                color: #ff97ae !important;
-                z-index: 99 !important;
+        .toggle-close {
+            display: flex;
+            cursor: pointer;
+            z-index: 99 !important;
+            transition: all .3s ease-in;
+        }
+
+        @keyframes scaleUp {
+            from {
+                height: 1px;
+                width: 1px;
+                opacity: 0;
+            }
+            to {
+                height: 100%;
+                width: auto;
+                opacity: 1;
             }
         }
 
@@ -196,13 +255,14 @@
             color: white ;
             padding: 90px 30px 20px;
             height: calc(100%);
+            animation: scaleUp 0.2s ease forwards;
 
-            >div {
+            >a {
                 border-bottom: 2px solid transparent;
             }
 
-            >div.active,
-            >div:hover {
+            >a.active,
+            >a:hover {
                 color: #fff;
                 border-bottom-color: white;
             }
@@ -210,16 +270,9 @@
     }
 </style>
 <body class="bg bg-gray-50 overflow-hidden">
-    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" style="position: relative;">
-        <i class="toggle fa-solid fa-bars fa-2x open" style="color: #1b1b1b; position: absolute; right: 40px; top: 20px"></i>
-        <div class="navigation open dflex align-items-center justify-content-center text-gray sm-sz" style="gap: 30px">
-            <div class="btn active">Home</div>
-            <div class="btn">Education</div>
-            <div class="btn">Experience</div>
-            <div class="btn">Projects</div>
-            <div class="btn">Skills</div>
-            <div class="btn">About</div>
-        </div>
+    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" >
+        <div id="navbar" style="position: relative;"> </div>
+        
         <div class="body-content dflex align-items-center overflow-auto sm-sz" style="width: calc(100% - 20px); max-width: 725px; margin-left: auto; margin-right: auto; height: 100%">
             <div style="width: 30%; max-width: 190px; height: 100%;" class="left-col dflex align-items-center justify-content-center">
                 <div style="width: fit-content; margin: 0; padding: 0; position: relative;">
@@ -247,15 +300,21 @@
                         </a>
                     </div>
                     <div class="icon-btn">
-                        <i class="fa-brands fa-github fa-lg flex-end"></i>
+                        <a href="https://github.com/AnTTViiii" target=”_blank”>
+                            <i class="fa-brands fa-github fa-lg flex-end"></i>
+                        </a>
                     </div>
                     <div class="icon-btn" style="font-size: 22px; font-weight: 700;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
                         in
                     </div>
     
                     <div class="btnResume btn gap-10 dflex align-items-center">
-                        Resume 
-                        <i class="fa-solid fa-up-right-from-square"></i>
+                        <a href="https://drive.google.com/file/d/14EUCsOvQ_bJYSS5l4seOdI3sF6zHXWfR/view" target=”_blank”>
+                            Resume
+                        </a>
+                        <a href="https://drive.usercontent.google.com/uc?id=14EUCsOvQ_bJYSS5l4seOdI3sF6zHXWfR&export=download">
+                            <i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -263,6 +322,8 @@
         </div>
     </div>
 </body>
+
+<script src="components/navbar.js"></script>
 
 <script>
     const str = "------• Software Developer • ------";
