@@ -7,16 +7,58 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
     <title>An Truong Tuong Vi | Experience</title>
+    <link rel="icon" type="image/x-icon" href="asset/favicon.ico">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg bg-gray-50 overflow-hidden">
-    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" >
-        <div id="navbar" style="position: relative;"> </div>
+<style>
+    .company {
+        min-width: 280px;
+        width: 100%;
+        height: fit-content;
+        background: rgba(255, 244, 242, 0.729);
+        border: 10px solid  #a2a2a24a;
+    }
+</style>
+<body class="bg bg-gray-50">
+    <div class="hidden-bg w-100 overflow-hidden sm-sz" style="height: 100vh">
+        <div id="navbar"> </div>
+
+        <div class="dflex flex-column align-items-center overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
+            <div id="companies" class="dflex flex-column gap-10" style="max-width: 725px;"></div>
+        </div>
     </div>
 </body>
 <script src="components/navbar.js"></script>
+<script>
+    const companies = [
+        {
+            name: 'QA Solutions Company',
+            link: 'https://qasvn.com/',
+            position: 'Intern Developer',
+            time: 'April 2024 - July 2024',
+            lang_tech: 'C#, SQL, Winforms, Blazor, DevExpress, Tortoise SVN',
+            description: `
+                <p><span style="margin-right: 12px">●</span>  Interned as a developer, primarily focused on building WinForms applications and Blazor Server apps for the healthcare sector.</p>
+            `
+        }
+    ]
+
+    const company = document.getElementById('companies');
+
+    companies.map((item, index) => (
+        company.innerHTML += `
+            <div class="company p-10 bradius-10" style="line-height: 2">
+                <a class="cpink" style="font-size: 18px; font-weight: 650" href="${item.link}">${item.name}</a>
+                <div style="font-size: 17px; font-weight: 600">${item.time}</div>
+                <div><span style="font-weight: 600">Position:</span> ${item.position}</div>
+                <div><span style="font-weight: 600">Languages & Technologies:</span> <i>${item.lang_tech}</i></div>
+                <div style="padding-left: 12px; text-align: justify">${item.description}</div>
+            </div>
+        `
+    ))
+</script>
 </html>
