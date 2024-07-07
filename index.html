@@ -5,38 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>An Truong Tuong Vi | Portfolio</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    .navigation {
+        padding: 10px 20px;
+        background-color: white;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 25px;
+        position: fixed;
+        top: 20px;
+        right: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 500;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 30px -10px, rgba(0, 0, 0, 0.3) 0px 18px 30px -18px;
+    }
+
     .navigation div {
         display: flex;
         align-items: center;
         justify-content: center;
         width: fit-content;
-        padding: 5px 10px;
-        height: 35px;
-        color: #333;
-        border-bottom: 2px solid transparent;
-
-        &:hover {
-            color: black;
-            border-bottom: 2px solid #333;
-        }
+        padding: 0 1px;
+        height: 30px;
     }
 
-    .navigation div.active {
-        border-bottom: 2px solid #333;
+    .navigation div.active,
+    .navigation div:hover {
+        color: rgb(3,7,18);
     }
 
     .logo {
-        background-color: #FF97AE;
-        --sz: 55px;
+        background-color: black /*#FF97AE*/;
+        --sz: 90px;
         height: var(--sz);
         width: var(--sz);
         border-radius: 50%;
         color: #fff;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 15px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
@@ -57,15 +70,149 @@
         &:hover {
             background-color: #ff97ae;
             color: #fff !important;
+            transition: all 0.3s ease-out;
+        }
+    }
+
+    .bg {
+        background: rgb(229,228,251);
+        background: linear-gradient(90deg, rgba(226,224,251,1) 27%, rgb(255, 244, 242) 90%);
+    }
+
+    .bg-gray-50 {
+        --tw-bg-opacity: 1;
+        background-color: rgb(249 254 251 / var(--tw-bg-opacity));
+    }
+
+    .hidden-bg {
+        background: url(asset/hidden_bg.png) center/cover no-repeat fixed;
+    }
+
+    div#rotate-text {
+        --sz: 150px;
+        height: var(--sz);
+        width: var(--sz);
+        position: relative;
+        animation: effect 8s linear infinite;
+    }
+      
+    @keyframes effect {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    div#rotate-text span {
+        position: absolute;
+        left: 50%;
+        transform-origin: 0px 75px;
+        transform-style: flat;
+        font-weight: normal;
+        color: black;
+        font-size: 18px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 600;
+    }
+
+    .btnResume {
+        background-color: #1b1b1b; 
+        color: white; 
+        border-radius: 8px;
+        font-weight: 600; 
+        padding: 10px 15px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    @media screen and (max-width: 630px) {
+        .sm-sz {
+            font-size: 14px !important;
+        }
+
+        .body-content {
+            flex-direction: column;
+
+            .left-col {
+                height: fit-content !important;
+                padding-top: 90px;
+                padding-bottom: 25px;
+            }
+
+            .right-col {
+                height: calc(100% - 265px);
+                justify-content: flex-start !important;
+                padding-top: 25px !important;
+                padding-bottom: 25px !important;
+                min-width: 320px !important;
+            }
+        }
+
+        .my-name {
+            font-size: 25px !important;
+        }
+
+        .icon-btn {
+            --sz: 30px;
+        }
+
+        .btnResume {
+            height: 30px;
+            font-size: 14px;
+        }
+        
+        .navigation {
+            display: none !important;
+        }
+
+        .toggle {
+            display: flex;
+            cursor: pointer;
+            transition: all .3s ease-out;
+
+            &.open {
+                color: #ff97ae !important;
+                z-index: 99 !important;
+            }
+        }
+
+        .navigation.open {
+            z-index: 98;
+            display: flex !important;
+            justify-content: flex-start !important;
+            flex-direction: column;
+            border-radius: 10px 0 0 10px;
+            right: 0;
+            left: auto;
+            top: 0;
+            background-color: rgba(104, 104, 104, 0.9);
+            transform: translate(0, 0);
+            color: white ;
+            padding: 90px 30px 20px;
+            height: calc(100%);
+
+            >div {
+                border-bottom: 2px solid transparent;
+            }
+
+            >div.active,
+            >div:hover {
+                color: #fff;
+                border-bottom-color: white;
+            }
         }
     }
 </style>
-<body class="ph-10">
-    <div class="dflex align-items-center gap-10" style="padding: 10px 15px; width: calc(100% - 20px); gap: 5px">
-        <div style="width: calc(20% - 25px);">
-            <div class="logo btn">Vi</div>
-        </div>
-        <div class="navigation dflex align-items-center justify-content-center" style="width: 60%;">
+<body class="bg bg-gray-50 overflow-hidden">
+    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" style="position: relative;">
+        <i class="toggle fa-solid fa-bars fa-2x open" style="color: #1b1b1b; position: absolute; right: 40px; top: 20px"></i>
+        <div class="navigation open dflex align-items-center justify-content-center text-gray sm-sz" style="gap: 30px">
             <div class="btn active">Home</div>
             <div class="btn">Education</div>
             <div class="btn">Experience</div>
@@ -73,17 +220,60 @@
             <div class="btn">Skills</div>
             <div class="btn">About</div>
         </div>
-        <div style="width: calc(20% - 25px);" class="dflex align-items-center gap-10 justify-content-end">
-            <div class="icon-btn">
-                <i class="fa-brands fa-google fa-lg"></i>
+        <div class="body-content dflex align-items-center overflow-auto sm-sz" style="width: calc(100% - 20px); max-width: 725px; margin-left: auto; margin-right: auto; height: 100%">
+            <div style="width: 30%; max-width: 190px; height: 100%;" class="left-col dflex align-items-center justify-content-center">
+                <div style="width: fit-content; margin: 0; padding: 0; position: relative;">
+                    <div id="rotate-text"></div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <div class="logo btn">Hire Me</div>
+                    </div>
+                </div>
             </div>
-            <div class="icon-btn">
-                <i class="fa-brands fa-github fa-lg flex-end"></i>
+    
+            <div style="width: 70%; height: 100%; padding: 0 20px; min-width: calc(100% - 190px)" class="right-col dflex flex-column justify-content-center gap-10">
+                <div class="my-name" style="color: #1b1b1b; font-weight: 700; font-size: 35px;"> An Truong Tuong <span style="color: #ff97ae">Vi</span> </div>
+                
+                <div style="height: 4px; width: 50px; background-color: #ff97ae; border-radius: 5px;"></div>
+                
+                <div style="line-height: 1.7; text-align: justify; margin-bottom: 10px">
+                    I am a passionate individual who thrives on building and applying algorithms to solve real-world industry problems. 
+                    <br/>Explore my projects and articles, showcasing my expertise in software and web development.
+                </div>
+                
+                <div style="width: 100%; gap: 15px" class="dflex align-items-center sm-sz">
+                    <div class="icon-btn">
+                        <a href="mailto:anvi8109@gmail.com">
+                            <i class="fa-brands fa-google fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="icon-btn">
+                        <i class="fa-brands fa-github fa-lg flex-end"></i>
+                    </div>
+                    <div class="icon-btn" style="font-size: 22px; font-weight: 700;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        in
+                    </div>
+    
+                    <div class="btnResume btn gap-10 dflex align-items-center">
+                        Resume 
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </div>
+                </div>
             </div>
-            <div class="icon-btn" style="font-size: 25px; font-weight: 700;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-                in
-            </div>
+            
         </div>
     </div>
 </body>
+
+<script>
+    const str = "------• Software Developer • ------";
+    const text = document.getElementById("rotate-text");
+    window.onload = function(){
+        for (let i = 0; i < str.length; i++) {
+            let span = document.createElement('span');
+            span.innerHTML = str[i] 
+            text.appendChild(span);
+            span.style.transform = `rotate(${10.57*i}deg)`;
+        }
+    }
+</script>
 </html>
