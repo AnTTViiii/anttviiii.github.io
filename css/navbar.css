@@ -85,14 +85,16 @@
         height: calc(100%);
         animation: scaleUp 0.2s ease forwards;
 
-        >a {
-            border-bottom: 2px solid transparent;
-        }
+        
+    }
 
-        >a.active,
-        >a:hover {
-            color: #fff;
-            border-bottom-color: white;
-        }
+    .navigation.open > a {
+        border-bottom: 2px solid transparent;
+    }
+
+    .navigation.open >a.active,
+    .navigation.open >a:hover {
+        color: #fff;
+        border-bottom-color: white;
     }
 }

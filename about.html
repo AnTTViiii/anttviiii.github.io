@@ -22,6 +22,12 @@
         background: rgba(255, 244, 242, 0.729);
         border: 10px solid  #a2a2a24a;
     }
+
+    @media screen and (max-width: 669px) {
+        #info {
+            grid-template-columns: auto !important;
+        }
+    }
 </style>
 <body class="bg bg-gray-50">
     <div class="hidden-bg w-100 overflow-hidden" style="height: 100vh">
@@ -30,7 +36,7 @@
         <div class="dflex flex-column align-items-center overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
             <div class="info dflex flex-column gap-10 p-10 bradius-10" style="max-width: 725px; line-height: 2">
                 <div style="font-size: 1.7rem; font-weight: 650">An Truong Tuong <span class="cpink" >Vi</span></div>
-                <div id="info" style="display: grid; gap: 20px; grid-template-columns: auto auto;"> </div>
+                <div id="info" style="display: grid; gap: 20px; grid-template-columns: auto auto"> </div>
             </div>
         </div>
     </div>
