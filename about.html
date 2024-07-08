@@ -15,17 +15,40 @@
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    .border-box {
+        background: radial-gradient(circle at 33% 33%, rgba(206, 191, 255, 1) 2%, rgba(214, 221, 255, 1) 33%, rgba(237, 255, 248, 1) 64%, rgba(255, 224, 174, 1) 100%);
+        transition: linear 1s ease-in-out;
+    }
+
     .info {
-        min-width: 280px;
         width: 100%;
         height: fit-content;
-        background: rgba(255, 244, 242, 0.729);
-        border: 10px solid  #a2a2a24a;
+        background: #ffffff;
+        border-radius: 5px;
+    }
+
+    .border-box:hover {
+        background: radial-gradient(circle at 33% 33%, rgba(255, 224, 174, 1) 0%, rgba(237, 255, 248, 1) 36%, rgba(214, 221, 255, 1) 67%, rgba(206, 191, 255, 1) 98%);
+    }
+
+    .border-box:hover .info {
+        background: #ffffffb4;
+        transition: all .5s ease-in-out;
     }
 
     @media screen and (max-width: 669px) {
         #info {
             grid-template-columns: auto !important;
+        }
+    }
+
+    @media screen and (max-width: 630px) {
+        .my-name {
+            font-size: 18px;
+        }
+
+        #info {
+            font-size: 14px;
         }
     }
 </style>
@@ -34,9 +57,11 @@
         <div id="navbar"> </div>
 
         <div class="dflex flex-column align-items-center overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
-            <div class="info dflex flex-column gap-10 p-10 bradius-10" style="max-width: 725px; line-height: 2">
-                <div style="font-size: 1.7rem; font-weight: 650">An Truong Tuong <span class="cpink" >Vi</span></div>
-                <div id="info" style="display: grid; gap: 20px; grid-template-columns: auto auto"> </div>
+            <div class="border-box p-10 w-100 bradius-10" style="max-width: 725px;">
+                <div class="info dflex flex-column gap-10 p-10" style="line-height: 2">
+                    <div class="my-name" style="font-size: 1.7rem; font-weight: 650">An Truong Tuong <span class="cpink" >Vi</span></div>
+                    <div id="info" style="display: grid; gap: 20px; grid-template-columns: auto auto"> </div>
+                </div>
             </div>
         </div>
     </div>
@@ -66,7 +91,7 @@
 
     information.map((item, index) => (
         info.innerHTML += `
-            <div><span class="cpink" style="margin-right: 10px">▶</span><span style="font-weight: 600">${item.title}:</span> ${item.info}</div>
+            <div><span class="cpink fa-solid fa-caret-right" style="margin-right: 10px"></span><span style="font-weight: 600">${item.title}:</span> ${item.info}</div>
         `
     ))
 </script>

@@ -15,12 +15,24 @@
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    .border-box {
+        background: radial-gradient(circle at 33% 33%, rgba(206, 191, 255, 1) 2%, rgba(214, 221, 255, 1) 33%, rgba(237, 255, 248, 1) 64%, rgba(255, 224, 174, 1) 100%);
+        padding: 10px;
+        transition: linear 1s ease-in-out;
+    }
     .company {
-        min-width: 280px;
         width: 100%;
         height: fit-content;
-        background: rgba(255, 244, 242, 0.729);
-        border: 10px solid  #a2a2a24a;
+        background: #ffffff;
+    }
+
+    .border-box:hover {
+        background: radial-gradient(circle at 33% 33%, rgba(255, 224, 174, 1) 0%, rgba(237, 255, 248, 1) 36%, rgba(214, 221, 255, 1) 67%, rgba(206, 191, 255, 1) 98%);
+    }
+
+    .border-box:hover .company {
+        background: #ffffffb4;
+        transition: all .5s ease-in-out;
     }
 </style>
 <body class="bg bg-gray-50">
@@ -51,12 +63,14 @@
 
     companies.map((item, index) => (
         company.innerHTML += `
-            <div class="company p-10 bradius-10" style="line-height: 2">
-                <a class="cpink" style="font-size: 18px; font-weight: 650" href="${item.link}">${item.name}</a>
-                <div style="font-size: 17px; font-weight: 600">${item.time}</div>
-                <div><span style="font-weight: 600">Position:</span> ${item.position}</div>
-                <div><span style="font-weight: 600">Languages & Technologies:</span> <i>${item.lang_tech}</i></div>
-                <div style="padding-left: 12px; text-align: justify">${item.description}</div>
+            <div class="border-box bradius-10">
+                <div class="company p-10" style="line-height: 2; border-radius: 5px">
+                    <a class="cpink" style="font-size: 18px; font-weight: 650" href="${item.link}" target="_blank">${item.name}</a>
+                    <div style="font-size: 17px; font-weight: 600">${item.time}</div>
+                    <div><span style="font-weight: 600">Position:</span> ${item.position}</div>
+                    <div><span style="font-weight: 600">Languages & Technologies:</span> <i>${item.lang_tech}</i></div>
+                    <div style="padding-left: 12px; text-align: justify">${item.description}</div>
+                </div>
             </div>
         `
     ))
