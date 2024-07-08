@@ -84,16 +84,14 @@
         padding: 90px 30px 20px;
         height: calc(100%);
         animation: scaleUp 0.2s ease forwards;
-
-        
     }
 
     .navigation.open > a {
         border-bottom: 2px solid transparent;
     }
 
-    .navigation.open >a.active,
-    .navigation.open >a:hover {
+    .navigation.open > a.active,
+    .navigation.open > a:hover {
         color: #fff;
         border-bottom-color: white;
     }
