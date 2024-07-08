@@ -24,6 +24,10 @@
     height: 30px;
 }
 
+.navigation a:not(:last-child) {
+    margin-right: 30px;
+}
+
 .navigation a.active,
 .navigation a:hover {
     color: rgb(3,7,18);
@@ -88,6 +92,11 @@
 
     .navigation.open > a {
         border-bottom: 2px solid transparent;
+    }
+
+    .navigation.open a:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
     }
 
     .navigation.open > a.active,

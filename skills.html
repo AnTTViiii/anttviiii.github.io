@@ -14,10 +14,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg bg-gray-50 overflow-hidden">
-    <div class="hidden-bg ph-10 h-100 w-100 overflow-hidden" >
-        <div id="navbar" style="position: relative;"> </div>
+
+<style>
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skills > div {
+        margin: 5px 10px;
+    }
+
+    .border-box {
+        height: fit-content;
+        width: fit-content;
+        padding: 2px;
+        background: radial-gradient(circle at 33% 33%, rgba(206, 191, 255, 1) 2%, rgba(214, 221, 255, 1) 33%, rgba(237, 255, 248, 1) 64%, rgba(255, 224, 174, 1) 100%);
+        transition: linear 1s ease-in-out;
+        border-radius: .74rem;
+    }
+
+    .border-box:hover {
+        transform: scale(1.05);
+        transition: all .2s ease-in-out;
+        background: radial-gradient(circle at 33% 33%, rgba(255, 224, 174, 1) 0%, rgba(237, 255, 248, 1) 36%, rgba(214, 221, 255, 1) 67%, rgba(206, 191, 255, 1) 98%);
+    }
+
+    .skill {
+        padding: .5rem 1.25rem;
+        background: white;
+        width: fit-content;
+        border-radius: .75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+</style>
+
+<body class="bg bg-gray-50">
+    <div class="hidden-bg w-100 overflow-hidden" style="height: 100vh">
+        <div id="navbar"> </div>
+
+        <div class="dflex flex-column align-items-center overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
+            <div class="p-10 w-100 skills" id="skills" style="max-width: 725px;"></div>
+        </div>
     </div>
 </body>
+
 <script src="components/navbar.js"></script>
+
+<script>
+    const skills = [
+        "C/C++", "HTML", "CSS/SCSS", "JavaScript", "Java", "C#", "PHP", "SQL", 
+        "ReactJS", "Spring Boot", "Blazor", "Winforms", "ASP.NET", 
+        "SQL Server", "MySQL",  "Github", "SVN", "Figma", "Photoshop"
+    ]
+
+    const ele = document.getElementById('skills');
+
+    skills.map((item, index) => (
+        ele.innerHTML += `
+            <div class="border-box"><div class="skill">${item}</div></div>
+        `
+    ))
+</script>
 </html>
