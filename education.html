@@ -21,8 +21,9 @@
         }
 
         .btnTranscript {
-            height: 30px;
+            height: 20px;
             font-size: 14px;
+            padding: 2px 5px !important;
         }
 
         .hidden-bg > div:nth-child(2) {
@@ -30,7 +31,11 @@
         }
 
         .heading-title {
-            font-size: 20px !important;
+            font-size: 16px !important;
+        }
+
+        .college > div > div:first-child {
+            font-size: 15px !important;
         }
     }
 
@@ -75,6 +80,10 @@
         padding: 10px;
     }
 
+    .certificates > div:not(:last-child) {
+        margin-right: 10px;
+    }
+
     .certificates > div > div:last-child {
         padding: 6px;
         background: linear-gradient(90deg, rgba(226,224,251,1) 27%, rgb(255, 244, 242) 90%) center/cover no-repeat fixed;
@@ -89,6 +98,24 @@
 
         .certificates > div {
             width: 100% !important;
+        }
+
+        .certificates > div:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 333px) {
+        .btnTranscript {
+            display: none;
+        }
+
+        .college:hover .btnTranscript {
+            display: flex;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 </style>
@@ -110,7 +137,7 @@
 
             <h4 class="heading-title"><span class="cpink"> —— </span>Certificates<span class="cpink"> —— </span></h4>
 
-            <div class="certificates dflex align-items-center gap-10 align-center" style="width: 100%; max-width: 725px;">
+            <div class="certificates dflex align-items-center align-center" style="width: 100%; max-width: 725px;">
                 <div class="dflex gap-10" style="width: calc(50% - 5px)">
                     <img src="/asset/TOEIC_LR.png" width="150px" height="auto" style="border-radius: 5px; object-fit: cover;" />
                     <div style="flex: 1 1 0;">
