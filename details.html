@@ -42,8 +42,8 @@
         max-width: 100%; /* You can set a specific width if needed */
         margin: auto;
         overflow: hidden; /* Hide the overflowing part of the image */
-        height: auto; /* Set a fixed height for the container */
-        aspect-ratio: 16/9;
+        /*height: calc(900vw / 16);  Set a fixed height for the container */
+        /*aspect-ratio: 16/9;*/
     }
     
     .slides {
@@ -446,7 +446,7 @@
             <div class="img w-100" style="height: fit-content;">
                 <div class="slideshow-container" style="border-radius: 8px">
                     ${data[0].img.map((img, idx) => (
-                        `<div class="slides fade">
+                        `<div class="slides fade" style="border-radius: 8px">
                             <img src="${img}" style="border-radius: 8px" alt="Image ${idx+1}">
                         </div>`
                     )).join('')}
@@ -537,5 +537,18 @@
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
     }
+</script>
+<script>
+    setSlideHeight()
+
+    function setSlideHeight() {
+        const element = document.querySelector('.slideshow-container');
+        const width = element.offsetWidth;
+        const height = width * 9 / 16;
+        element.style.height = `${height}px`;
+    }
+
+    // Optionally, set the height on window resize to maintain the aspect ratio
+    window.addEventListener('resize', setElementHeight);
 </script>
 </html>
