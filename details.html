@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
+    <title>An Truong Tuong Vi | Projects</title>
+    <link rel="icon" type="image/x-icon" href="asset/favicon.ico">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f5ecf2605.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .border-box {
+        background: radial-gradient(circle at 33% 33%, rgba(206, 191, 255, 1) 2%, rgba(214, 221, 255, 1) 33%, rgba(237, 255, 248, 1) 64%, rgba(255, 224, 174, 1) 100%);
+        padding: 10px;
+        transition: linear 1s ease-in-out;
+    }
+
+    .project {
+        width: 100%;
+        height: fit-content;
+        background: #ffffff;
+    }
+
+    .border-box:hover {
+        background: radial-gradient(circle at 33% 33%, rgba(255, 224, 174, 1) 0%, rgba(237, 255, 248, 1) 36%, rgba(214, 221, 255, 1) 67%, rgba(206, 191, 255, 1) 98%);
+    }
+
+    .border-box:hover .project {
+        background: #ffffffb4;
+        transition: all .5s ease-in-out;
+    }
+
+    /*start of slide show css*/
+    .slideshow-container {
+        position: relative;
+        max-width: 100%; /* You can set a specific width if needed */
+        margin: auto;
+        overflow: hidden; /* Hide the overflowing part of the image */
+        height: 520px; /* Set a fixed height for the container */
+    }
+    
+    .slides {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 500px; /* Ensure the slides take the full height of the container */
+        text-align: center; /* Center the images horizontally */
+    }
+    
+    .slides img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    /* Add styles for previous and next buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 10px 12px;
+        transform: translateY(-50%);
+        color: white;
+        background: #bbbbbb66;
+        font-size: 18px;
+        transition: 0.3s ease;
+        border-radius: 0 10px 10px 0;
+        user-select: none;
+    }
+    
+    .next {
+        right: 0;
+        border-radius: 10px 0 0 10px;
+    }
+    
+    .slideshow-container:hover .prev, .slideshow-container:hover .next {
+        background-color: #ff97ae;
+    }
+    
+    /* Add styles for the dots */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .dot.active, .dot:hover {
+        background-color: #ff97ae;
+    }
+    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    /*end of slide show css*/
+</style>
+<body class="bg bg-gray-50">
+    <div class="hidden-bg w-100 overflow-hidden sm-sz" style="height: 100vh">
+        <div id="navbar"> </div>
+
+        <div class="dflex flex-column align-items-center overflow-auto w-100 h-100" style="padding: 90px 20px 20px; margin-left: auto; margin-right: auto;">
+            <div id="projects" class="w-100 p-10 border-box bradius-10" style="max-width: 1024px;"></div>
+        </div>
+    </div>
+</body>
+<script src="components/navbar.js"></script>
+<script>
+    const projects = [
+        {
+            name: '3D Model Management System',
+            members: 8,
+            subject: 'Three - dimentinal geographic information system',
+            date: 'September 2023 - January 2024',
+            role: '<span style="font-weight: 600">Developer.</span> Designed mockup. Implemented frontend and backend for admin module.',
+            technologies: 'Java, JavaScript, HTML, CSS, Spring Boot, ReactJS, MySQL, ArcGIS, Figma',
+            description: `A website provides two modules: one for customers to view 3D models, book tours, and another for admins to manage construction components and ticket sales activities.`,
+            link: [
+                {
+                    display: 'github.com/anhthu1402/Nhom5_QLMH_API',
+                    url: 'https://github.com/anhthu1402/Nhom5_QLMH_API'
+                },
+                {
+                    display: 'github.com/AnTTViiii/qldv_admin',
+                    url: 'https://github.com/AnTTViiii/qldv_admin'
+                }
+            ],
+            img: [
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851426/Portfolio/dinh_1_r2nagn.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851399/Portfolio/dinh_2_rebub4.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851675/Portfolio/dinh_3_pk0oqn.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851675/Portfolio/dinh_4_s4ds05.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851675/Portfolio/dinh_5_dideor.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851668/Portfolio/dinh_7_ue7uun.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851668/Portfolio/dinh_9_jatty9.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851668/Portfolio/dinh_10_frf7ei.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851667/Portfolio/dinh_11_tdf0p2.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851663/Portfolio/dinh_12_ohihwv.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851662/Portfolio/dinh_13_gbilxd.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851662/Portfolio/dinh_14_sorwux.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851662/Portfolio/dinh_15_eefi5o.png"
+            ],
+            functions: [
+                {
+                    actor: 'admin',
+                    usecase: [
+                        "Sign in/Sign out",
+                        "View 3D model",
+                        "View reviews",
+                        "Manage tickets",
+                        "Manage customers",
+                        "Approve ticket booking requests",
+                        "View booking information",
+                        "View components of the project",
+                        "Delete project components",
+                        "Add components to the project"
+                    ]
+                },
+                {
+                    actor: 'user',
+                    usecase: [
+                        "Sign up/Sign in/Sign out",
+                        "View 3D model",
+                        "View and edit account information",
+                        "Change password",
+                        "View reviews",
+                        "Submit a review",
+                        "View and book tickets",
+                        "Pay via MoMo"
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'E-commerce website',
+            members: 3,
+            subject: 'Web technology and applications',
+            date: 'September 2023 - January 2024',
+            role: '<span style="font-weight: 600">Team leader.</span> Assigned tasks, designed UI mockups, implemented frontend and backend.',
+            technologies: 'HTML, CSS, JavaScript, Java, ReactJS, MySQL, Spring Boot',
+            description: `A retail selling website allows users to buy and pay. It also enables admins to oversee and manage sales activities.`,
+            link: [
+                {
+                    display: 'github.com/anhthu1402/uitbikes_api',
+                    url: 'https://ithub.com/anhthu1402/uitbikes_api'
+                },
+                {
+                    display: 'github.com/AnTTViiii/uitbikes_admin',
+                    url: 'https://github.com/AnTTViiii/uitbikes_admin'
+                },
+                {
+                    display: 'github.com/AnTTViiii/uitbikes_fe3',
+                    url: 'https://github.com/AnTTViiii/uitbikes_fe3'
+                }
+            ],
+            img: [
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851645/Portfolio/bike_1_qjmkjd.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720852952/Portfolio/bike_12_qiglqh.jpg",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_4_r5jhbg.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_2_g9mowe.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_3_liht3v.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_5_u05nbh.jpg",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720852948/Portfolio/bike_6.jpg_o0wmcc.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_6_eyyyjv.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851642/Portfolio/bike_7_l9ys9i.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_9_fa3wuc.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851643/Portfolio/bike_8_wlgkyb.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851453/Portfolio/bike_11_urbtzz.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851642/Portfolio/bike_10_ss7ijm.png"
+            ],
+            functions: [
+                {
+                    actor: 'admin',
+                    usecase: [
+                        'Sign in',
+                        'View statistical reports',
+                        'View customer list',
+                        'View/Edit/Add brands',
+                        'View/Edit/Add products',
+                        'View order list',
+                        'View order details',
+                        'Edit order status',
+                        'View top-up requests list',
+                        'Approve top-up requests',
+                        'View and delete admin rights',
+                        'View and delete user reviews',
+                        'Chat/Advise customers',                    
+                    ]
+                },
+                {
+                    actor: 'user',
+                    usecase: [
+                        'View, search, filter products',
+                        'View product details',
+                        'Add products to cart',
+                        'View/edit items in cart',
+                        'Place orders, view order history',
+                        'View/Edit account information',
+                        'Submit top-up requests and view transaction history (top-up/purchase)',
+                        'Review products',
+                        'Change/Reset password',
+                        'View order status notifications'
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'Music Streaming Website',
+            members: 1,
+            subject: 'Project',
+            date: 'February 2023 - May 2024',
+            role: '<span style="font-weight: 600">Developer.</span> Designed mockup. Implemented frontend and backend.',
+            technologies: 'HTML, CSS, JavaScript, Java, ReactJS, MySQL, Spring Boot',
+            description: `A streaming website allows users to listen to music online, like and add music to their favorite list. Moreover, users can upload their music albums and share them with others.`,
+            link: [
+                {
+                    display: 'github.com/AnTTViiii/UW3_MusicStreaming',
+                    url: 'https://github.com/AnTTViiii/UW3_MusicStreaming'
+                }
+            ],
+            img: [
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851662/Portfolio/uw3_1_boyrid.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851662/Portfolio/uw3_2_g9x7rr.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851658/Portfolio/uw3_3_ytvxqm.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851658/Portfolio/uw3_4_gbdme9.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851657/Portfolio/uw3_5_yqglb5.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851657/Portfolio/uw3_6_hot5zd.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851657/Portfolio/uw3_7_pnpuer.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851657/Portfolio/uw3_8_brrwds.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851657/Portfolio/uw3_9_r7zprm.png"
+            ],
+            functions: [
+                {
+                    actor: 'Admin & user',
+                    usecase: [
+                        "Sign up/Sign in/Sign out",
+                        "Search for songs/albums/artists",
+                        "View and edit account information",
+                        "Listen to music online",
+                        "View lyrics",
+                        "Add song/album/artist to favorites",
+                        "Upload song/album",
+                        "Edit/Delete song/album information"
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'E-commerce Website',
+            members: 4,
+            subject: 'Web application development',
+            date: 'September 2022 - January 2023',
+            role: '<span style="font-weight: 600">Developer.</span> Implemented frontend and backend.',
+            technologies: 'HTML, CSS, PHP, JavaScript, MySQL',
+            description: `A retail selling website allows users to purchase products and make payments. It also enables admins to manage sales activities.`,
+            link: [
+                {
+                    display: 'github.com/huygia0811/UITMotorcycle-Solution',
+                    url: 'https://github.com/huygia0811/UITMotorcycle-Solution'
+                }
+            ],
+            img: [
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851653/Portfolio/moto_1_xwghnc.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851653/Portfolio/moto_2_wlrrsd.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851652/Portfolio/moto_3_h8b5km.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851652/Portfolio/moto_4_ed1t8f.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851652/Portfolio/moto_5_p11uts.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851649/Portfolio/moto_6_lcte04.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851649/Portfolio/moto_7_cfjeys.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851649/Portfolio/moto_8_rogs2f.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851649/Portfolio/moto_10_pgyhke.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851648/Portfolio/moto_9_rholjp.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851644/Portfolio/moto_11_oho9n2.png",
+            ],
+            functions: [
+                {
+                    actor: 'Admin',
+                    usecase: [
+                        'Log in',
+                        'Manage products and brands',
+                        'Approve user top-up requests',
+                        'Manage user accounts',
+                        'Manage admin accounts',
+                        'Manage orders',
+                        'Statistics of the number of users, orders, revenue, and pending top-up requests'
+                    ]
+                },
+                {
+                    actor: 'User',
+                    usecase: [
+                        'Sign up/Sign in',
+                        'Forgot password',
+                        'Access website and view product information',
+                        'Top up account',
+                        'Add products to cart',
+                        'Purchase products',
+                        'View personal information, invoices, financial management, notifications'
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'English-Vietnamese Dictionary App',
+            members: 3,
+            subject: 'Cross-Platform Mobile Development',
+            date: 'September 2022 - January 2023',
+            role: '<span style="font-weight: 600">Developer.</span> Implemented frontend and backend.',
+            technologies: 'C#, ASP.NET, SQL Server, Xamarin',
+            description: `A dictionary app allows users to learn English by memorizing vocabulary. Users can find word meanings, listen to pronunciations, and read example sentences. This app also offers grammar lessons.`,
+            link: [
+                {
+                    display: 'github.com/anhthu1402/ViendictApp',
+                    url: 'https://github.com/anhthu1402/ViendictApp'
+                }
+            ],
+            img: [
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851680/Portfolio/vie_1_gwhias.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851682/Portfolio/vie_4_hptouv.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851681/Portfolio/vie_2_nnbutx.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851680/Portfolio/vie_15_ivo0pq.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851681/Portfolio/vie_5_hrcrfe.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851682/Portfolio/vie_7_njnlzf.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851682/Portfolio/vie_8_auyray.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851683/Portfolio/vie_9_mbadu3.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851683/Portfolio/vie_10_u1sfn2.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851684/Portfolio/vie_11_udrgez.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851684/Portfolio/vie_6_yoaujm.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851683/Portfolio/vie_12_dfamum.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851688/Portfolio/vie_13_qlmpbb.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851702/Portfolio/vie_14_nsvtjm.png",
+                "https://res.cloudinary.com/dpwehcnso/image/upload/v1720851683/Portfolio/vie_3_mddmdc.png"
+            ],
+            functions: [
+                {
+                    actor: 'Guest',
+                    usecase: [
+                        'Access the application and register to become a user',
+                        'Translate English/Vietnamese text',
+                        'View basic grammar topics and available vocabulary sets on the application',
+                        'Search for vocabulary'
+                    ]
+                },
+                {
+                    actor: 'User',
+                    usecase: [
+                        'Sign in',
+                        'Forgot password',
+                        'Translate English/Vietnamese text',
+                        'View basic grammar topics and available vocabulary sets on the application',
+                        'Search for vocabulary',
+                        'View search history of vocabulary',
+                        'Add/View/Delete vocabulary lists in the favorites category',
+                        'Learn vocabulary by topics in the Study page and save learning progress',
+                        'View/Edit personal information',
+                        'Change password'
+                    ]
+                }
+            ]
+        }
+    ]
+    
+    const project = document.getElementById('projects');
+    
+    const url1 = decodeURIComponent(url)
+
+    const data = projects.filter(i => url1.includes(i.name));
+    
+    project.innerHTML += `
+        <div class="bradius-10 project p-10 w-100" style="line-height: 2; border-radius: 5px; text-align: justify">
+            <div class="img w-100" style="height: fit-content;">
+                <div class="slideshow-container" style="border-radius: 8px">
+                    ${data[0].img.map((img, idx) => (
+                        `<div class="slides fade">
+                            <img src="${img}" style="border-radius: 8px" alt="Image ${idx+1}">
+                        </div>`
+                    )).join('')}
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            
+                <div style="text-align:center">
+                    ${data[0].img.map((img, idx) => (
+                        `<span class="dot" onclick="currentSlide(${idx+1})"></span>`
+                    )).join('')}
+                </div>
+            </div>
+            <div>
+                <div class="cpink" style="font-size: 18px; font-weight: 650;">${data[0].name}</div>
+                <div><span class="cpink" style="font-weight: 600">Member:</span> ${data[0].members} ${data[0].members == 1 ? 'member' : 'members'}.</div>
+                <div><span class="cpink" style="font-weight: 600">Date:</span> ${data[0].date}</div>
+                <div><span class="cpink" style="font-weight: 600">Subject:</span> ${data[0].subject}</div>
+                <div><span class="cpink" style="font-weight: 600">Role:</span> ${data[0].role}</div>
+                <div><span class="cpink" style="font-weight: 600">Languages & Technologies:</span> <i>${data[0].technologies}</i></div>
+                <div><span class="cpink" style="font-weight: 600">Description:</span> ${data[0].description}</div>
+                <div>
+                    <span class="cpink" style="font-weight: 600">Link project:</span>
+                    ${data[0].link.length == 1 ? (`<a class="underline" href="${data[0].link[0].url}" target="_blank">${data[0].link[0].display}</a>`) : (
+                        data[0].link.map((url) => (
+                            `<div style="padding-left: 12px; text-align: justify">
+                                <span style="margin-right: 12px">°</span>  
+                                <a class="underline" href="${url.url}" target="_blank">${url.display}</a>
+                            </div>`
+                        )).join('') // Use join('') to concatenate without commas
+                    )}
+                </div>
+                ${data[0].functions.map((func) => (
+                    `<div class="cpink" style="font-weight: 600">Chức năng ${func.actor}:</div>
+                    ${func.usecase.map((u) => (
+                        `<div style="padding-left: 12px; text-align: justify">
+                            <span style="margin-right: 12px">°</span>  
+                            ${u}
+                        </div>`
+                    )).join('')}`
+                )).join('')}
+            </div>
+        </div>`
+</script>
+<script>
+    //Slideshow
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4500);
+    }
+
+    function plusSlides(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlide(slideIndex = n);
+    }
+
+    function showSlide(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+</html>
