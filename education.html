@@ -82,31 +82,24 @@
 
     .certificates > div > div {
         width: calc(60% - 10px); 
-        min-width: calc(100% - 160px); 
-        min-height: fit-content; 
-        height: auto; 
-        overflow: hidden;
-    }
-
-    .certificates > div > img {
-        width: 40%;
-        height: 100%; 
-        border-radius: 5px; 
-        object-fit: cover; 
-        max-width: 150px;
-        object-fit: cover;
-    }
-
-    .certificates > div:not(:last-child) {
-        margin-right: 10px;
-    }
-
-    .certificates > div > div:last-child {
+        min-width: calc(100% - 160px);
         padding: 6px;
         background: linear-gradient(90deg, rgba(226,224,251,1) 27%, rgb(255, 244, 242) 90%) center/cover no-repeat fixed;
         border-radius: 5px;
         line-height: 1.5;
         margin-left: 10px;
+    }
+
+    .certificates > div > img {
+        width: 40%;
+        height: auto; 
+        border-radius: 5px; 
+        object-fit: cover; 
+        max-width: 150px;
+    }
+
+    .certificates > div:not(:last-child) {
+        margin-right: 10px;
     }
 
     @media screen and (max-width: 692px) {
