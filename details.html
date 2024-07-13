@@ -130,6 +130,10 @@
         display: inline-block;        /* Ensure it behaves well within the container */
     }
 
+    .underline {
+        text-decoration: underline;
+    }
+
 </style>
 <body class="bg bg-gray-50">
     <div class="hidden-bg w-100 overflow-hidden sm-sz" style="height: 100vh">
@@ -469,7 +473,7 @@
                 <div><span class="cpink" style="font-weight: 600">Role:</span> ${data[0].role}</div>
                 <div><span class="cpink" style="font-weight: 600">Languages & Technologies:</span> <i>${data[0].technologies}</i></div>
                 <div><span class="cpink" style="font-weight: 600">Description:</span> ${data[0].description}</div>
-                <div>
+                <div class="url">
                     <span class="cpink" style="font-weight: 600">Link project:</span>
                     ${data[0].link.length == 1 ? (`<a class="underline" href="${data[0].link[0].url}" target="_blank">${data[0].link[0].display}</a>`) : (
                         data[0].link.map((url) => (

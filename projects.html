@@ -161,7 +161,7 @@
                     <div><span class="cpink" style="font-weight: 600">Role:</span> ${item.role}</div>
                     <div><span class="cpink" style="font-weight: 600">Languages & Technologies:</span> <i>${item.technologies}</i></div>
                     <div><span class="cpink" style="font-weight: 600">Description:</span> ${item.description}</div>
-                    <div>
+                    <div class="url">
                         <span class="cpink" style="font-weight: 600">Link project:</span>
                         ${item.link.length == 1 ? (`<a class="underline" href="${item.link[0].url}" target="_blank">${item.link[0].display}</a>`) : (
                             item.link.map((url) => (
