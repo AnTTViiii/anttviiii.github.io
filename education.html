@@ -110,12 +110,12 @@
     @media screen and (max-width: 692px) {
         .certificates {
             flex-direction: column;
-            min-height: 170px;
-            height: fit-content;
         }
 
         .certificates > div {
             width: 100% !important;
+            min-height: 170px;
+            height: fit-content;
         }
 
         .certificates > div:not(:last-child) {
@@ -134,6 +134,10 @@
             top: 50px;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        .certificates > div {
+            min-height: 200px;
         }
     }
 </style>
