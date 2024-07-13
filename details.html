@@ -464,7 +464,7 @@
                     <span class="cpink" style="font-weight: 600">Link project:</span>
                     ${data[0].link.length == 1 ? (`<a class="underline" href="${data[0].link[0].url}" target="_blank">${data[0].link[0].display}</a>`) : (
                         data[0].link.map((url) => (
-                            `<div style="padding-left: 12px; text-align: justify">
+                            `<div style="padding-left: 12px; text-align: justify; white-space: normal; text-overflow: ellipse">
                                 <span style="margin-right: 12px">°</span>  
                                 <a class="underline" href="${url.url}" target="_blank">${url.display}</a>
                             </div>`
