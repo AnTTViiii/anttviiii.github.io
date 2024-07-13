@@ -42,14 +42,15 @@
         max-width: 100%; /* You can set a specific width if needed */
         margin: auto;
         overflow: hidden; /* Hide the overflowing part of the image */
-        height: 520px; /* Set a fixed height for the container */
+        height: auto; /* Set a fixed height for the container */
+        aspect-ratio: 16/9;
     }
     
     .slides {
         display: none;
         position: relative;
         width: 100%;
-        height: 500px; /* Ensure the slides take the full height of the container */
+        height: 100%; /* Ensure the slides take the full height of the container */
         text-align: center; /* Center the images horizontally */
     }
     
@@ -121,6 +122,14 @@
         to {opacity: 1}
     }
     /*end of slide show css*/
+
+    .url {
+        word-wrap: break-word;        /* Older versions of browsers */
+        word-break: break-all;        /* Break words to ensure they fit */
+        overflow-wrap: break-word;    /* Modern CSS standard for wrapping */
+        display: inline-block;        /* Ensure it behaves well within the container */
+    }
+
 </style>
 <body class="bg bg-gray-50">
     <div class="hidden-bg w-100 overflow-hidden sm-sz" style="height: 100vh">
@@ -464,7 +473,7 @@
                     <span class="cpink" style="font-weight: 600">Link project:</span>
                     ${data[0].link.length == 1 ? (`<a class="underline" href="${data[0].link[0].url}" target="_blank">${data[0].link[0].display}</a>`) : (
                         data[0].link.map((url) => (
-                            `<div style="padding-left: 12px; text-align: justify; white-space: normal; text-overflow: ellipse">
+                            `<div class="url" style="padding-left: 12px; text-align: justify; white-space: normal; text-overflow: ellipse">
                                 <span style="margin-right: 12px">°</span>  
                                 <a class="underline" href="${url.url}" target="_blank">${url.display}</a>
                             </div>`
