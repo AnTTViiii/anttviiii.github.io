@@ -80,6 +80,23 @@
         padding: 10px;
     }
 
+    .certificates > div > div {
+        width: calc(60% - 10px); 
+        min-width: calc(100% - 160px); 
+        min-height: fit-content; 
+        height: auto; 
+        overflow: hidden;
+    }
+
+    .certificates > div > img {
+        width: 40%;
+        height: 100%; 
+        border-radius: 5px; 
+        object-fit: cover; 
+        max-width: 150px;
+        object-fit: cover;
+    }
+
     .certificates > div:not(:last-child) {
         margin-right: 10px;
     }
@@ -140,8 +157,8 @@
 
             <div class="certificates dflex align-items-center align-center" style="width: 100%; max-width: 725px;">
                 <div class="dflex" style="width: calc(50% - 5px); height: fit-content">
-                    <img src="/asset/TOEIC_LR.png" width="40%" height="100%" style="border-radius: 5px; object-fit: cover; max-width: 150px" />
-                    <div style="width: calc(60% - 10px); min-width: calc(100% - 160px); min-height: fit-content; height: auto; overflow: hidden">
+                    <img src="/asset/TOEIC_LR.png" />
+                    <div>
                         TOEIC Listening and Reading<br/>
                         Score: <sapn class="cpink">745/990</sapn><br/>
                         Valid until: 2025/10/26
@@ -149,8 +166,8 @@
                 </div>
 
                 <div class="dflex" style="width: calc(50% - 5px); height: fit-content"">
-                    <img src="/asset/TOEIC_SW.png" width="40%" height="100%" style="border-radius: 5px; object-fit: cover; max-width: 150px" />
-                    <div style="width: calc(60% - 10px); min-width: calc(100% - 160px); min-height: fit-content; height: auto; overflow: hidden">
+                    <img src="/asset/TOEIC_SW.png" />
+                    <div>
                         TOEIC Speaking and Writing<br/>
                         Score: <span class="cpink">250/400</span><br/>
                         Valid until: 2026/02/21
