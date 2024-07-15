@@ -39,7 +39,6 @@
         word-wrap: break-word;        /* Older versions of browsers */
         word-break: break-all;        /* Break words to ensure they fit */
         overflow-wrap: break-word;    /* Modern CSS standard for wrapping */
-        display: inline-block;        /* Ensure it behaves well within the container */
     }
 
     .underline {
@@ -161,17 +160,22 @@
                     <div><span class="cpink" style="font-weight: 600">Role:</span> ${item.role}</div>
                     <div><span class="cpink" style="font-weight: 600">Languages & Technologies:</span> <i>${item.technologies}</i></div>
                     <div><span class="cpink" style="font-weight: 600">Description:</span> ${item.description}</div>
-                    <div class="url">
-                        <span class="cpink" style="font-weight: 600">Link project:</span>
-                        ${item.link.length == 1 ? (`<a class="underline" href="${item.link[0].url}" target="_blank">${item.link[0].display}</a>`) : (
+                    ${item.link.length == 1 
+                    ? (`<div class="url">
+                            <span class="cpink" style="font-weight: 600">Link project:</span>
+                            <a class="underline" href="${item.link[0].url}" target="_blank">${item.link[0].display}</a>
+                        </div>`
+                    ) : (
+                        `<div class="cpink" style="font-weight: 600">Link project:</div>
+                        ${
                             item.link.map((url) => (
                                 `<div class="url" style="padding-left: 12px; text-align: justify; white-space: normal; text-overflow: ellipsis">
                                     <span style="margin-right: 12px">°</span>  
                                     <a class="underline" href="${url.url}" target="_blank">${url.display}</a>
                                 </div>`
                             )).join('') // Use join('') to concatenate without commas
-                        )}
-                    </div>
+                        }`
+                    )}
                 </div>
             </div>
         `
